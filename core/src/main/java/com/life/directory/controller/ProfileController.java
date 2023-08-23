@@ -3,13 +3,11 @@ package com.life.directory.controller;
 import com.life.directory.model.Profile;
 import com.life.directory.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/profiles")
+@CrossOrigin(origins = {"http://127.0.0.1:8080", "http://localhost:4200"})
 public class ProfileController {
 
     private final ProfileService profileService;
