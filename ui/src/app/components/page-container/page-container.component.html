@@ -1,0 +1,19 @@
+<div class="page-container">
+  <header>
+    <h1>
+      Social Sculpt
+    </h1>
+  </header>
+
+  <div class="flex center-v gap-12">
+    <a *ngIf="navigation" [routerLink]="navigation">
+      <---
+    </a>
+
+    <h2 class="page-container-sub-header">
+      {{ name }}
+    </h2>
+  </div>
+
+  <ng-content />
+</div>
