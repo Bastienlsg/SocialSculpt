@@ -1,0 +1,19 @@
+<app-page-container name="Single Profile Information" navigation="/profiles">
+  <div class="profile flex f-column" *ngIf="profile$ | async; let profile">
+    <table border="1px">
+      <thead>
+      <tr>
+        <th align="left">Profile ID</th>
+        <th align="left">Profile Name</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr>
+        <td>{{ profile.id }}</td>
+        <td>{{ profile.firstName }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</app-page-container>

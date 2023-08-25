@@ -1,0 +1,21 @@
+<app-page-container name="Profiles List">
+  <div *ngIf="profiles$ | async; let profiles" class="flex f-column gap-12">
+    <table border="1px">
+      <thead>
+      <tr>
+        <th align="left">ID</th>
+        <th align="left">Name</th>
+        <th align="left">Link</th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let profile of profiles">
+        <td>{{ profile.id }}</td>
+        <td>{{ profile.firstName }}</td>
+        <td><a [routerLink]="buildProfileLink(profile.id)">Link</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</app-page-container>
