@@ -12,7 +12,10 @@ const profileRoutes: Routes = [
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    ListProfilesComponent,
+    ProfileDetailComponent
+  ],
   imports: [
     CommonModule,
     RouterModule.forChild(profileRoutes)
