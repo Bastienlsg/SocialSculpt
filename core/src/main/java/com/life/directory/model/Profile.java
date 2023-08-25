@@ -16,6 +16,6 @@ public class Profile {
     @Column(name="profile_id")
     private Long id;
 
-    @Column(name="name", length=60, nullable=false)
+    @Column(name="first_name", length=60, nullable=false)
     private String firstName;
 }
