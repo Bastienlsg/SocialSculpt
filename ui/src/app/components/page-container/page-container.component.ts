@@ -7,6 +7,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PageContainerComponent {
-  @Input({ required: true }) name!: string;
+  @Input() name?: string;
   @Input() navigation?: string;
 }
