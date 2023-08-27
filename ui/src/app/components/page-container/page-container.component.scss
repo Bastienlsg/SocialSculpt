@@ -1,0 +1,31 @@
+.page-container {
+  &-title {
+    background: #48538f;
+    color: #ffffff;
+    height: 100px;
+
+    &-value {
+      min-height: 48px;
+    }
+  }
+
+  &-content-wrapper {
+    padding: 24px 24px 0 24px;
+  }
+
+  &-content {
+    margin-top: -60px;
+    background: #ffffff;
+    border-radius: 8px 8px 0 0;
+    padding-bottom: 36px;
+  }
+
+  &-footer {
+    &-content {
+      padding: 0 24px;
+      background: #48538f;
+      color: #ffffff;
+      font-size: 12px;
+    }
+  }
+}

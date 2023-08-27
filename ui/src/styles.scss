@@ -1,15 +1,10 @@
-.flex {
-  display: flex;
+@import "styles/layout";
+
+html, body {
+  height: 100%;
 }
 
-.f-column {
-  flex-direction: column;
-}
-
-.gap-12 {
-  gap: 12px;
-}
-
-.center-v {
-  align-items: center;
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }

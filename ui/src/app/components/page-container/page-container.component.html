@@ -1,19 +1,35 @@
-<div class="page-container">
-  <header>
-    <h1>
-      Social Sculpt
-    </h1>
+<div class="page-container h-100 flex f-column">
+  <header class="page-container-header mat-elevation-z1">
+    <mat-toolbar>
+      <h1>
+        <a mat-button routerLink="/">
+          Social Sculpt
+        </a>
+      </h1>
+    </mat-toolbar>
   </header>
 
-  <div class="flex center-v gap-12">
-    <a *ngIf="navigation" [routerLink]="navigation">
-      <---
-    </a>
+  <div class="gap-12 p-24 page-container-title">
+    <h2 class="flex center-v page-container-title-value">
+      <a mat-icon-button *ngIf="navigation" [routerLink]="navigation">
+        <mat-icon>
+          arrow_back
+        </mat-icon>
+      </a>
 
-    <h2 class="page-container-sub-header">
       {{ name }}
     </h2>
   </div>
 
-  <ng-content />
+  <div class="page-container-content-wrapper h-100">
+    <div class="page-container-content p-24 mat-app-background h-100">
+      <ng-content />
+    </div>
+  </div>
+
+  <footer class="page-container-footer">
+    <mat-toolbar class="page-container-footer-content flex center-h">
+      Powered by &copy; 2023 Bastien. All rights reserved.
+    </mat-toolbar>
+  </footer>
 </div>

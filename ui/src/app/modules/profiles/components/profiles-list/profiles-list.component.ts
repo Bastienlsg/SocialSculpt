@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { elementAt, map, Observable } from 'rxjs';
 import { Profile } from '../../models';
 
 @Component({
@@ -14,6 +14,8 @@ export class ProfilesListComponent {
     map(data => data.profiles),
   );
 
+  readonly columns = ['id', 'name', 'link'];
+
   constructor(
     private activatedRoute: ActivatedRoute,
   ) {}
@@ -21,4 +23,6 @@ export class ProfilesListComponent {
   buildProfileLink(id: number): (string | number)[] {
     return ['/', 'profiles', id];
   }
+
+  protected readonly elementAt = elementAt;
 }
