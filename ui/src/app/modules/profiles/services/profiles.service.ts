@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { RestApiService } from '../../../services';
+import { RestApiService } from '@ui/services';
 import { Observable } from 'rxjs';
 import { Profile } from '../models';
 

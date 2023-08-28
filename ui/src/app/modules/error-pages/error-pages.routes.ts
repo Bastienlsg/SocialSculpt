@@ -1,8 +1,7 @@
 import { Routes } from '@angular/router';
-import { Page404ErrorComponent } from './components';
+import * as ErrorPagesComponents from './index';
 
 export const errorPagesRoutes: Routes = [
-  {
-    path: '404-error', component: Page404ErrorComponent
-  }
+  { path: '**', component: ErrorPagesComponents.NotFoundComponent },
+  { path: '403', component: ErrorPagesComponents.ForbiddenComponent },
 ];

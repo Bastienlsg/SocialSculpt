@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import * as ErrorPagesComponents from './index';
+import { RouterLink } from '@angular/router';
 import { errorPagesRoutes } from './error-pages.routes';
-import { Page404ErrorComponent } from './components';
-import { PageContainerModule } from '@ui/components';
 
 @NgModule({
   declarations: [
-    Page404ErrorComponent
+    ErrorPagesComponents.NotFoundComponent,
+    ErrorPagesComponents.ForbiddenComponent
   ],
-  imports: [
-    RouterModule.forChild(errorPagesRoutes),
-    PageContainerModule
+  exports: [
+    ErrorPagesComponents.NotFoundComponent,
+    ErrorPagesComponents.ForbiddenComponent
   ],
-  providers: [
-  ],
+  imports: [   
+    RouterLink, 
+    CommonModule,
+    RouterModule.forChild(errorPagesRoutes)],
 })
-export class ErrorPagesModule {
-}
+export class ErrorPagesModule {}
