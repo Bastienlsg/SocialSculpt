@@ -1,16 +1,13 @@
-import { Injectable } from '@angular/core';
-import { Resolve } from '@angular/router';
+import { inject } from '@angular/core';
+import { ResolveFn } from '@angular/router';
 import { Profile } from '../models';
-import { Observable } from 'rxjs';
-import { ProfilesService } from '../services';
+import { ProfilesFacade } from '../+state';
+import { map } from 'rxjs';
 
-@Injectable()
-export class ProfilesListResolver implements Resolve<Profile[]> {
-  constructor(
-    private profilesService: ProfilesService,
-  ) {}
-
-  resolve(): Observable<Profile[]> {
-    return this.profilesService.loadAll();
-  }
-}
+export const profilesListResolver: ResolveFn<Profile[]> = () => {
+  const profilesFacade = inject(ProfilesFacade);
+  profilesFacade.loadAll();
+  return profilesFacade.loadAllSuccess$.pipe(
+    map(({ items }) => items),
+  );
+};
