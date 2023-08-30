@@ -1,16 +1,16 @@
 import { Routes } from '@angular/router';
 import { ProfilesListComponent, ProfilesSingleComponent } from './components';
-import { ProfilesListResolver, ProfilesSingleResolver } from './resolvers';
+import { profilesListResolver, profilesSingleResolver } from './resolvers';
 
 export const profilesRoutes: Routes = [
   {
     path: '', component: ProfilesListComponent, resolve: {
-      profiles: ProfilesListResolver,
+      profiles: profilesListResolver,
     },
   },
   {
     path: ':id', component: ProfilesSingleComponent, resolve: {
-      profile: ProfilesSingleResolver,
+      profile: profilesSingleResolver,
     },
   },
 ];

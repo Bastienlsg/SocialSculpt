@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { elementAt, map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Profile } from '../../models';
+import { ProfilesFacade } from '../../+state';
 
 @Component({
   selector: 'app-profiles-list',
@@ -9,20 +9,15 @@ import { Profile } from '../../models';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfilesListComponent {
-  readonly profiles$: Observable<Profile[]> = this.activatedRoute.data.pipe(
-    map((data) => <{ profiles: Profile[] }> data),
-    map(data => data.profiles),
-  );
-
+  readonly profiles$: Observable<Profile[]> = this.profilesFacade.profiles$;
   readonly columns = ['id', 'name', 'link'];
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-  ) {}
+    private profilesFacade: ProfilesFacade,
+  ) {
+  }
 
   buildProfileLink(id: number): (string | number)[] {
     return ['/', 'profiles', id];
   }
-
-  protected readonly elementAt = elementAt;
 }
